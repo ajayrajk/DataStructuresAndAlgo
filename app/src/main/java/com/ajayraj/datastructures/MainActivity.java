@@ -8,7 +8,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     String test[];
-    Button btnFibonacci,btnBubble,btnBinaryearch,btnMergeSort,btnLongestPalindrome,btnInsertionSorting;
+    Button btnFibonacci,btnBubble,btnBinaryearch,btnMergeSort,btnReverseWord,btnLongestPalindrome,btnInsertionSorting;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         btnFibonacci=findViewById(R.id.btnFibonacci);
         btnInsertionSorting=findViewById(R.id.btnInsertionSot);
         btnLongestPalindrome=findViewById(R.id.btnLongestPalindrome);
+
+        btnReverseWord=findViewById(R.id.btnReverseWord);
 
    }
 
@@ -69,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
                LongestPlindromeSubString.longestPalindrome("forgeeksskeegfor");
            }
        });
+
+
+       btnReverseWord.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               ReverseWord.main(test);
+           }
+       });
+
 
    }
 }

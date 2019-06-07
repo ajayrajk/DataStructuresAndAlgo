@@ -39,6 +39,7 @@ public class BinarySearchingAlgo {
                 // If x is smaller, ignore right half
             else
                 r = m - 1;
+
         }
         return -1;
 
