@@ -1,4 +1,4 @@
-package com.ajayraj.datastructures;
+package com.ajayraj.datastructures.sorting;
 
 /**
  * apttrix.com

@@ -1,16 +1,24 @@
 package com.ajayraj.datastructures;
 
 import android.content.Intent;
-import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.ajayraj.datastructures.LinkedList.CircularLinkedList;
+import com.ajayraj.datastructures.LinkedList.DoublyLinkedList;
+import com.ajayraj.datastructures.LinkedList.SinglyLinkedList;
+import com.ajayraj.datastructures.searching.BinarySearchingAlgo;
+import com.ajayraj.datastructures.sorting.BubbleSortingAlgo;
+import com.ajayraj.datastructures.sorting.InsertionSortingAlgo;
+
+
 public class MainActivity extends AppCompatActivity {
 
     String test[];
-    Button btnFibonacci,btnBubble,btnBinaryearch,btnMergeSort,btnReverseWord,btnLongestPalindrome,btnInsertionSorting;
+    Button btnFibonacci,btnBubble,btnBinaryearch,btnMergeSort,btnReverseWord,
+            btnLongestPalindrome,btnInsertionSorting,btnSingleLinkedList,btnDoubleLinkedList,btnCircularLinkedList;
     @Override
     protected final  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         btnReverseWord=findViewById(R.id.btnReverseWord);
 
+       btnSingleLinkedList=findViewById(R.id.btnSingleList);
+       btnDoubleLinkedList=findViewById(R.id.btnDoubleList);
+       btnCircularLinkedList=findViewById(R.id.btnCircularList);
 
 
    }
@@ -84,6 +95,29 @@ public class MainActivity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                ReverseWord.main(test);
+           }
+       });
+
+
+       btnSingleLinkedList.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               SinglyLinkedList.main(test);
+           }
+       });
+
+       btnDoubleLinkedList.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               DoublyLinkedList.main(test);
+           }
+       });
+
+
+       btnCircularLinkedList.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               CircularLinkedList.main(test);
            }
        });
 

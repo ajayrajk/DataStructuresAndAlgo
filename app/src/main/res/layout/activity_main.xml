@@ -58,6 +58,22 @@
                 android:layout_width="match_parent"
                 android:text="Reverse Word"
                 android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnSingleList"
+                android:layout_width="match_parent"
+                android:text="Single LinkedList"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnDoubleList"
+                android:layout_width="match_parent"
+                android:text="Double LinkedList"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnCircularList"
+                android:layout_width="match_parent"
+                android:text="Circular LinkedList"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
 
