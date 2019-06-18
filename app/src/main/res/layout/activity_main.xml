@@ -11,6 +11,7 @@
 
     <android.support.v4.widget.NestedScrollView
         android:layout_margin="15dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -73,6 +74,33 @@
                 android:id="@+id/btnCircularList"
                 android:layout_width="match_parent"
                 android:text="Circular LinkedList"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnAVL"
+                android:layout_width="match_parent"
+                android:text="AVL"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnBST"
+                android:layout_width="match_parent"
+                android:text="BS Tree"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnTraverseIterative"
+                android:layout_width="match_parent"
+                android:text="BS Traverse Iterative"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnBSTraversalRecusive"
+                android:layout_width="match_parent"
+                android:text="BS Traverse Recursive"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnBSLevelorder"
+                android:layout_width="match_parent"
+                android:text="BS Level Order"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 

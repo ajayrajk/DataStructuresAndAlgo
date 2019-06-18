@@ -12,13 +12,19 @@ import com.ajayraj.datastructures.LinkedList.SinglyLinkedList;
 import com.ajayraj.datastructures.searching.BinarySearchingAlgo;
 import com.ajayraj.datastructures.sorting.BubbleSortingAlgo;
 import com.ajayraj.datastructures.sorting.InsertionSortingAlgo;
+import com.ajayraj.datastructures.tree.AVLTree;
+import com.ajayraj.datastructures.tree.BinarySearchTree;
+import com.ajayraj.datastructures.tree.BinaryTreeTraversalIterative;
+import com.ajayraj.datastructures.tree.BinaryTreeTraversalRecursive;
+import com.ajayraj.datastructures.tree.LevelOrderTreeTraversal;
 
 
 public class MainActivity extends AppCompatActivity {
 
     String test[];
     Button btnFibonacci,btnBubble,btnBinaryearch,btnMergeSort,btnReverseWord,
-            btnLongestPalindrome,btnInsertionSorting,btnSingleLinkedList,btnDoubleLinkedList,btnCircularLinkedList;
+            btnLongestPalindrome,btnInsertionSorting,btnSingleLinkedList,
+            btnDoubleLinkedList,btnCircularLinkedList,btnAVL,btnBST,btnBSTTraversal,btnBSTRecursive,btnLevelTree;
     @Override
     protected final  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +47,17 @@ public class MainActivity extends AppCompatActivity {
 
         btnReverseWord=findViewById(R.id.btnReverseWord);
 
+        //linked list
        btnSingleLinkedList=findViewById(R.id.btnSingleList);
        btnDoubleLinkedList=findViewById(R.id.btnDoubleList);
        btnCircularLinkedList=findViewById(R.id.btnCircularList);
+
+       //tree
+       btnAVL=findViewById(R.id.btnAVL);
+       btnBST=findViewById(R.id.btnBST);
+       btnBSTRecursive=findViewById(R.id.btnBSTraversalRecusive);
+       btnBSTTraversal=findViewById(R.id.btnTraverseIterative);
+       btnLevelTree=findViewById(R.id.btnBSLevelorder);
 
 
    }
@@ -121,7 +135,47 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
-   }
+
+       btnAVL.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View v) {
+                       AVLTree.main(test);
+                   }
+               });
+
+       btnBST.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               BinarySearchTree.main(test);
+           }
+       });
+
+       btnBSTTraversal.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               BinaryTreeTraversalIterative.main(test);
+           }
+       });
+
+
+       btnBSTRecursive.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               BinaryTreeTraversalRecursive.main(test);
+           }
+       });
+
+
+
+       btnLevelTree.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               LevelOrderTreeTraversal.main(test);
+           }
+       });
+
+
+    }
 
 
 }
