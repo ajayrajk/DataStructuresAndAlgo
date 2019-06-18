@@ -1,5 +1,7 @@
 package com.ajayraj.datastructures;
 
+import android.content.Intent;
+import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,11 +12,14 @@ public class MainActivity extends AppCompatActivity {
     String test[];
     Button btnFibonacci,btnBubble,btnBinaryearch,btnMergeSort,btnReverseWord,btnLongestPalindrome,btnInsertionSorting;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected final  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_main);
           inItView();
           inItListner();
+
+          //start jobIntent
+          MyService.enqueueWork(MainActivity.this,MyService.class,1010,new Intent(MainActivity.this, MyService.class));
     }
 
    private void inItView(){
@@ -27,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         btnLongestPalindrome=findViewById(R.id.btnLongestPalindrome);
 
         btnReverseWord=findViewById(R.id.btnReverseWord);
+
+
 
    }
 
@@ -80,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
-
    }
+
+
 }

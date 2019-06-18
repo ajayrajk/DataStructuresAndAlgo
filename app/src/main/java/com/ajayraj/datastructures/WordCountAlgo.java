@@ -1,5 +1,7 @@
 package com.ajayraj.datastructures;
 
+import android.content.Intent;
+
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -9,7 +11,7 @@ import java.util.Map;
  * Created by Ajay Raj on 07,June,2019
  */
 
-public class WordCountAlgo {
+public class WordCountAlgo extends FibonacciSeries{
 
     public static void main(String args[]) {
 
@@ -23,11 +25,11 @@ public class WordCountAlgo {
 
 
             if(hm.containsKey(arr[i])){
-                hm.put(arr[i].toString(),hm.get(arr[i])+1);
+                hm.put(arr[i],hm.get(arr[i])+1);
 
 
             }else{
-                hm.put(arr[i].toString(),1);
+                hm.put(arr[i],1);
             }
 
 
@@ -45,6 +47,7 @@ public class WordCountAlgo {
         }
 
     }
+
 }
 
 
