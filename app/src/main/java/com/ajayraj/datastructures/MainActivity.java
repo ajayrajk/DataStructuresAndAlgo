@@ -188,7 +188,18 @@ public class MainActivity extends AppCompatActivity implements MyInterface {
 
     }
 
+    public  void add(int a , int b){
 
+    }
+
+    public void add(Integer a, Integer b){
+
+    }
+
+
+    public int add(int a, int b,int c){
+        return a+b;
+    }
     @Override
     public void a() {
 

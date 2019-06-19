@@ -64,7 +64,7 @@ public class SinglyLinkedList{
             //make next of new node as head
             node.setNext(head);
 
-            // mode head to the new node
+            // make head to the new node
             head = node;
 
             //increase the size of linkedlist
