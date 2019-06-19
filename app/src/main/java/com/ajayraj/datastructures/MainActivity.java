@@ -19,7 +19,7 @@ import com.ajayraj.datastructures.tree.BinaryTreeTraversalRecursive;
 import com.ajayraj.datastructures.tree.LevelOrderTreeTraversal;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyInterface {
 
     String test[];
     Button btnFibonacci,btnBubble,btnBinaryearch,btnMergeSort,btnReverseWord,
@@ -165,6 +165,17 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
+       View.OnClickListener onClickListener=new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+           }
+       };
+
+       btnBSTRecursive.setOnClickListener( v-> BinaryTreeTraversalRecursive.main(test));
+
+
+       btnBSTRecursive.setOnClickListener(onClickListener);
 
 
        btnLevelTree.setOnClickListener(new View.OnClickListener() {
@@ -178,4 +189,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void a() {
+
+    }
+
+    @Override
+    public void b() {
+
+    }
+
+    @Override
+    public void c() {
+
+    }
+
+    @Override
+    public void d() {
+
+    }
 }
