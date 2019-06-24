@@ -3,6 +3,7 @@ package com.ajayraj.datastructures;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,8 +19,11 @@ import com.ajayraj.datastructures.tree.BinaryTreeTraversalIterative;
 import com.ajayraj.datastructures.tree.BinaryTreeTraversalRecursive;
 import com.ajayraj.datastructures.tree.LevelOrderTreeTraversal;
 
+import static com.ajayraj.datastructures.StringProblems.reverseArray;
+import static com.ajayraj.datastructures.StringProblems.reverseNumber;
 
-public class MainActivity extends AppCompatActivity implements MyInterface {
+
+public class MainActivity extends AppCompatActivity implements MyTestInterface , MyInterface {
 
     String test[];
     Button btnFibonacci,btnBubble,btnBinaryearch,btnMergeSort,btnReverseWord,
@@ -32,8 +36,12 @@ public class MainActivity extends AppCompatActivity implements MyInterface {
           inItView();
           inItListner();
 
+        MyInterface a=new MainActivity();
+        a.a();
           //start jobIntent
           MyService.enqueueWork(MainActivity.this,MyService.class,1010,new Intent(MainActivity.this, MyService.class));
+
+      Log.e("test","activity onCreate");
     }
 
    private void inItView(){
@@ -65,12 +73,25 @@ public class MainActivity extends AppCompatActivity implements MyInterface {
    private void inItListner(){
 
 
+
+
+
         // bubble sorting
         btnBubble.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 BubbleSortingAlgo.main(test);
+
+                //reverse the array
+                reverseArray();
+
+                reverseNumber();
+
+                Intent intent=new Intent(MainActivity.this,SecondActivity.class);
+                startActivity(intent);
+
+
             }
         });
 
@@ -188,6 +209,55 @@ public class MainActivity extends AppCompatActivity implements MyInterface {
 
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Log.e("test"," activity onStart");
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.e("test"," activity onResume");
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.e("test"," activity onPause");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.e("test"," activity onStop");
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        Log.e("test"," activity onRestart");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Log.e("test"," activity onDestroy");
+
+    }
+
     public  void add(int a , int b){
 
     }
@@ -200,10 +270,8 @@ public class MainActivity extends AppCompatActivity implements MyInterface {
     public int add(int a, int b,int c){
         return a+b;
     }
-    @Override
-    public void a() {
 
-    }
+
 
     @Override
     public void b() {
@@ -217,6 +285,11 @@ public class MainActivity extends AppCompatActivity implements MyInterface {
 
     @Override
     public void d() {
+
+    }
+
+    @Override
+    public void a() {
 
     }
 }

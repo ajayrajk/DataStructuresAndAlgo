@@ -162,4 +162,56 @@ public class StringProblems {
 
         System.out.println("Vovels is "+count +" consonants is "+(charArray.length-(count+space)));
     }
+
+
+    //reverse the array
+    public static void reverseArray(){
+        int arr[]={1,2,3,4,6,7,8,12,13};
+
+        System.out.println("before reverse  the array");
+        printArray(arr);
+
+        int s=0,e=arr.length-1;
+        int temp;
+        while (s<e){
+            temp =arr[s];
+            arr[s]=arr[e];
+            arr[e]=temp;
+            s++;
+            e--;
+        }
+        System.out.println("after reverse  the array");
+        printArray(arr);
+
+
+    }
+
+    private static void printArray(int arr[]){
+
+        for (int i=0;i<arr.length;i++){
+            System.out.print(" "+arr[i]);
+        }
+
+        System.out.println("end sort the array");
+
+    }
+
+
+
+    public static  void  reverseNumber(){
+
+        int n=123456;
+        int rem=0,rev=0;
+
+
+        while (n>0){
+
+            rem=n%10;  //take the last digit
+            rev=rev*10+rem;
+            n/=10;
+
+        }
+
+        System.out.println(rev);
+    }
 }

@@ -14,8 +14,8 @@ public class ReverseWord {
 
         for(int i=0;i<arr.length;i++){
             int j=0;
-            for(j=arr[i].toString().length()-1;j>=0;j--){
-                sb.append(arr[i].toString().charAt(j));
+            for(j=arr[i].length()-1;j>=0;j--){
+                sb.append(arr[i].charAt(j));
             }
 
             sb.append(" ");

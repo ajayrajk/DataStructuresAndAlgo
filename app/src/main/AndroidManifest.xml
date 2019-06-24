@@ -20,6 +20,9 @@
         <service
             android:name=".MyService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity android:name=".SecondActivity"/>
+
     </application>
 
 </manifest>

@@ -114,8 +114,14 @@ public class SinglyLinkedList{
             if (head == null) {
                 System.out.println("List is empty.");
             } else {
+
+                //get the head node
                 ListNode temp = head;
+
+                //point as head to the next node
                 head = head.getNext();
+
+                //set head as a null value
                 temp.setNext(null);
                 size--;
             }
