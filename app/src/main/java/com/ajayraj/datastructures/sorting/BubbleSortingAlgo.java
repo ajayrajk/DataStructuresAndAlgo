@@ -34,7 +34,8 @@ public class BubbleSortingAlgo {
 
             System.out.println(arr[i] + " ");
 
-        }
+        
+	}
     }
 
 
