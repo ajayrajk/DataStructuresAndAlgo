@@ -56,9 +56,7 @@ public class QuickSortingAlgorithms {
 
             if (arr[j]<=pivt){
                 swap(arr,i,j);
-               /* int temp=arr[i];
-                arr[i]=arr[j];
-                arr[j]=temp;*/
+               
                 i++;
 
             }
