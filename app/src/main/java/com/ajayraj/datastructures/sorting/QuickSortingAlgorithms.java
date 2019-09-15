@@ -47,7 +47,9 @@ public class QuickSortingAlgorithms {
         arr[b]=temp;
     }
     private static int partition(int arr[],int s,int e){
-        int i=s;
+        //we can initilize over here
+        int i=0;
+        // we can take take the last index of  array as pivot
         int pivt=arr[e];
 
         for (int j=i;j<e;j++){
