@@ -5,6 +5,94 @@ package com.ajayraj.datastructures.sorting;
  * Created by Ajay Raj on 07,June,2019
  */
 
+1: Methods:
+public class MergerSort{
+
+     public static void main(String []args){
+       int arr[] = {12, 11, 13, 5, 6, 7, 67, 2};
+
+        System.out.println("Given Array");
+        printArray(arr);
+
+        /*MergerSort ob = new MergerSort();
+        ob.*/
+        mergeSort(arr, arr.length);
+
+        System.out.println("\nSorted array");
+        printArray(arr);
+     }
+     /* A utility function to print array of size n */
+	static void printArray(int arr[])
+	{
+		int n = arr.length;
+		for (int i = 0; i < n; ++i)
+			System.out.print(arr[i] + " ");
+		System.out.println();
+	}
+    static void mergeSort(int arr[], int n){
+         //if size is 1 then simply return 
+         if(n<2)
+         return ;
+         
+         //find mid in array
+        int mid=n/2;
+        //int m =l+ (r-l)/2;
+
+         
+         //create left and right array
+         int leftArray[]=new int[mid];
+         int rightArray[]=new int[n-mid];
+         
+         //fill left and right array
+         for(int i=0;i<mid;i++)
+         leftArray[i]=arr[i];
+         
+         for(int i=mid;i<n;i++)
+         rightArray[i-mid]=arr[i];
+         
+         
+        // again apply om left sub array
+        // pass end index of left array
+        mergeSort(leftArray,mid);
+        
+        // again apply om right sub array
+        // pass start index of right array
+        mergeSort(rightArray,n-mid);
+        
+
+        // merge left and right sub array
+        merge(arr,leftArray,rightArray,mid,n-mid);
+        
+    }
+    
+   static void merge(int arr[],int leftArray[],int rightArry[],
+   int left, 
+     int right){
+         int i=0,j=0,k=0;
+         
+         while(i<left && j<right){
+             if(leftArray[i]<rightArry[j]){
+                 arr[k++]=leftArray[i++];
+             }else {
+               arr[k++]=rightArry[j++];
+             }
+         }
+         
+         //fill all remaining items from leftArray
+         while(i<left){
+             arr[k++]=leftArray[i++];
+         }
+         
+         //fill all remaining items from rightArray
+         while(j<right){
+             arr[k++]=rightArry[j++];
+         }
+         
+         
+     }
+}
+
+2: Methods:
 public class MegeSortingAlgo {
 
 
