@@ -51,16 +51,17 @@ public class MergerSort{
          rightArray[i-mid]=arr[i];
          
          
-        // again apply om left sub array
+        // again apply on left sub array
         // pass end index of left array
         mergeSort(leftArray,mid);
         
-        // again apply om right sub array
-        // pass start index of right array
+        // again apply on right sub array
+        // pass end index of right array
         mergeSort(rightArray,n-mid);
         
 
         // merge left and right sub array
+	//pass arr , left array , right array , end idex of left array and end index of right array.
         merge(arr,leftArray,rightArray,mid,n-mid);
         
     }
