@@ -23,4 +23,14 @@ public class ListNoade{
             ptr=ptr.next;
         }
      }
+      // traverse a linkList
+      static  public void traverseLinkedList(ListNoade head){
+         ListNoade temp=head;
+         while(temp!=null){
+             //print values
+            System.out.println(temp.val);
+            
+            temp=temp.next;
+         }
+     }
 }
