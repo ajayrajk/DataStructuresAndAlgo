@@ -1,0 +1,26 @@
+public class ListNoade{
+
+     public int val;
+     public ListNoade next;
+     public ListNoade(int x){
+         val=x;
+     }
+     public static void main(String []args){
+        ListNoade l1=new ListNoade(4);
+        ListNoade l2=new ListNoade(8);
+        ListNoade l3=new ListNoade(15);
+        
+        // link the node
+        l1.next=l2;
+        l2.next=l3;
+        l3.next=null;
+        
+        // print value
+        ListNoade ptr=l1;
+        
+        while(ptr!=null){
+            System.out.println(ptr.val);
+            ptr=ptr.next;
+        }
+     }
+}
