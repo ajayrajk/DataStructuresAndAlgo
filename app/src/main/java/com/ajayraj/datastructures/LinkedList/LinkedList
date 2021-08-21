@@ -1,14 +1,14 @@
-public class ListNoade{
+public class ListNode{
 
      public int val;
-     public ListNoade next;
-     public ListNoade(int x){
+     public ListNode next;
+     public ListNode(int x){
          val=x;
      }
      public static void main(String []args){
-        ListNoade l1=new ListNoade(4);
-        ListNoade l2=new ListNoade(8);
-        ListNoade l3=new ListNoade(15);
+        ListNode l1=new ListNode(4);
+        ListNode l2=new ListNode(8);
+        ListNode l3=new ListNode(15);
         
         // link the node
         l1.next=l2;
@@ -16,21 +16,81 @@ public class ListNoade{
         l3.next=null;
         
         // print value
-        ListNoade ptr=l1;
+        ListNode ptr=l1;
         
         while(ptr!=null){
             System.out.println(ptr.val);
             ptr=ptr.next;
         }
+        
+        // traverse a linkedList
+        System.out.println("============="+"new line"+"============");
+        traverseLinkedList(l1);
+        
+        // Insert at start index
+        System.out.println("============="+"new line"+"============");
+        ListNode newHead =insertAtStart(l1);
+         // traverse a linkedList after insert at first 
+        traverseLinkedList(newHead);
+        
+        //Insert at end index
+        insertAtEnd(newHead);
+          // traverse a linkedList after insert at end 
+        System.out.println("============="+"new line"+"============");
+        traverseLinkedList(newHead);
+        
+        insertAtMidlle(newHead,4,12);
+        System.out.println("============="+"new line"+"============");
+        traverseLinkedList(newHead);
+        
      }
-      // traverse a linkList
-      static  public void traverseLinkedList(ListNoade head){
-         ListNoade temp=head;
+  static  public void traverseLinkedList(ListNode head){
+         ListNode temp=head;
          while(temp!=null){
              //print values
             System.out.println(temp.val);
             
             temp=temp.next;
          }
+     }
+     
+     static public ListNode insertAtStart(ListNode head){
+                 //create a new node
+                 ListNode newNode=new ListNode(2);
+                 
+                 //assign new node next to head address
+
+                 newNode.next=head;
+                 
+                 // assign head to new node
+                 head=newNode;
+                 return head;
+     }
+     
+     static public void insertAtEnd(ListNode head){
+                //create a new node
+                ListNode newNode=new ListNode(17);
+                 
+                 ListNode temp=head;
+                 while(temp.next!=null){
+                     temp=temp.next;
+                 }
+                 
+                 temp.next=newNode;
+                 //newNode.next=null;
+                 
+     }
+     static public void insertAtMidlle(ListNode head,int pos,int valToInserted){
+         //create a new node
+        ListNode newNode=new ListNode(valToInserted);
+        ListNode ptr=head;
+        for(int i=1;i<pos;i++){
+           ptr=ptr.next;   
+        }
+        
+        //add new node to a pos
+        newNode.next=ptr.next;
+        ptr.next=newNode;
+        
      }
 }
