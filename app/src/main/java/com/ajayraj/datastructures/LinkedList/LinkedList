@@ -39,9 +39,22 @@ public class ListNode{
         System.out.println("============="+"new line"+"============");
         traverseLinkedList(newHead);
         
-        insertAtMidlle(newHead,4,12);
+        insertAtMidlle(newHead,3,12);
         System.out.println("============="+"new line"+"============");
         traverseLinkedList(newHead);
+        
+        ListNode delHead= deleteAtFirst(newHead);
+        System.out.println("============="+"new line"+"============");
+        traverseLinkedList(delHead);
+        
+        
+        deleteAtEnd(delHead);
+         System.out.println("============="+"new line"+"============");
+        traverseLinkedList(delHead);
+        
+        deleteAtMidlle(delHead,3);
+        System.out.println("============="+"new line"+"============");
+        traverseLinkedList(delHead);
         
      }
   static  public void traverseLinkedList(ListNode head){
@@ -88,9 +101,43 @@ public class ListNode{
            ptr=ptr.next;   
         }
         
-        //add new node to a pos
+        //add new node to a pos 
         newNode.next=ptr.next;
+        
+        //assign ptr of next to new node
         ptr.next=newNode;
         
      }
+     static public ListNode deleteAtFirst(ListNode head){
+        
+         
+         //assign head to the next node
+         head=head.next;
+         
+         //simply retrun head
+         return head;
+     }
+     
+     static public void deleteAtEnd(ListNode head){
+         ListNode ptr=head;
+         // loop adress of before last node ptr
+         while(ptr.next.next!=null){
+             ptr=ptr.next;
+         }
+         // assign null to before the last node
+         ptr.next=null;
+        
+     }
+     static public void deleteAtMidlle(ListNode head,int pos){
+         ListNode ptr=head;
+         
+         for (int i=1;i<pos-1;i++)
+         ptr=ptr.next;
+         
+         //take node which we want to delete 
+         ListNode delNode=ptr.next;
+         // ptr of next is assign to next node of delete 
+         ptr.next=delNode.next;
+     }
+     
 }
