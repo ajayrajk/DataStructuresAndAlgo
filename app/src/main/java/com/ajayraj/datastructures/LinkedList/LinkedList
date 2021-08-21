@@ -128,6 +128,7 @@ public class ListNode{
          ptr.next=null;
         
      }
+     
      static public void deleteAtMidlle(ListNode head,int pos){
          ListNode ptr=head;
          
