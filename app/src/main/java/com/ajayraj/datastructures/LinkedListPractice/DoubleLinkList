@@ -1,0 +1,107 @@
+public class DoubleLinkList{
+     private int val;
+     private DoubleLinkList prev;
+     private DoubleLinkList next;
+     
+     DoubleLinkList(int value){
+         val=value;
+         prev=null;
+         next=null;
+         
+     }
+     
+     public static void traverseNext(DoubleLinkList l){
+         DoubleLinkList temp=l;
+         
+         while(temp!=null){
+             System.out.println(" "+temp.val);
+             temp=temp.next;
+         }
+         
+     }
+     public static void traversePrev(public class DoubleLinkList{
+     private int val;
+     private DoubleLinkList prev;
+     private DoubleLinkList next;
+     
+     DoubleLinkList(int value){
+         val=value;
+         prev=null;
+         next=null;
+         
+     }
+     
+     public static void traverseNext(DoubleLinkList l){
+         DoubleLinkList temp=l;
+         
+         while(temp!=null){
+             System.out.println(" "+temp.val);
+             temp=temp.next;
+         }
+         
+     }
+     public static void traversePrev(DoubleLinkList l){
+         DoubleLinkList temp=l;
+         
+         while(temp!=null){
+             System.out.println(" "+temp.val);
+             temp=temp.prev;
+         }
+         
+     }
+     
+     public static void main(String []args){
+        System.out.println("Hello World");
+        DoubleLinkList l1=new DoubleLinkList(4);
+        DoubleLinkList l2=new DoubleLinkList(8);
+        DoubleLinkList l3=new DoubleLinkList(15);
+        
+        //link l1 to l2
+        l1.next=l2;
+        l2.prev=l1;
+        
+        //link l2 to l3
+        l2.next=l3;
+        l3.prev=l2;
+        
+        //traverse with start node
+        traverseNext(l1);
+        
+        //traverse with end node
+        traversePrev(l3);
+        
+        
+     }
+} l){
+         DoubleLinkList temp=l;
+         
+         while(temp!=null){
+             System.out.println(" "+temp.val);
+             temp=temp.prev;
+         }
+         
+     }
+     
+     public static void main(String []args){
+        System.out.println("Hello World");
+        DoubleLinkList l1=new DoubleLinkList(4);
+        DoubleLinkList l2=new DoubleLinkList(8);
+        DoubleLinkList l3=new DoubleLinkList(15);
+        
+        //link l1 to l2
+        l1.next=l2;
+        l2.prev=l1;
+        
+        //link l2 to l3
+        l2.next=l3;
+        l3.prev=l2;
+        
+        //traverse with start node
+        traverseNext(l1);
+        
+        //traverse with end node
+        traversePrev(l3);
+        
+        
+     }
+}
