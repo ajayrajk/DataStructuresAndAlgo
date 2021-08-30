@@ -14,40 +14,79 @@ public class DoubleLinkList{
          DoubleLinkList temp=l;
          
          while(temp!=null){
-             System.out.println(" "+temp.val);
+             System.out.print(" "+temp.val);
              temp=temp.next;
          }
-         
-     }
-     public static void traversePrev(public class DoubleLinkList{
-     private int val;
-     private DoubleLinkList prev;
-     private DoubleLinkList next;
-     
-     DoubleLinkList(int value){
-         val=value;
-         prev=null;
-         next=null;
-         
-     }
-     
-     public static void traverseNext(DoubleLinkList l){
-         DoubleLinkList temp=l;
-         
-         while(temp!=null){
-             System.out.println(" "+temp.val);
-             temp=temp.next;
-         }
+         System.out.println(" ");
+
          
      }
      public static void traversePrev(DoubleLinkList l){
          DoubleLinkList temp=l;
          
          while(temp!=null){
-             System.out.println(" "+temp.val);
+             System.out.print(" "+temp.val);
              temp=temp.prev;
          }
+      System.out.println(" ");
+
          
+     }
+     public static void traverseFromStart(DoubleLinkList node){
+         
+         while(node.prev!=null){
+             node=node.prev;
+         }
+         
+         while(node!=null){
+              System.out.print(" "+node.val);
+             node=node.next;
+         }
+        System.out.println(" ");
+
+     }
+     
+     public static void traverseFromEnd(DoubleLinkList node){
+         
+         while(node.next!=null){
+             node=node.next;
+         }
+         
+         while(node!=null){
+              System.out.print(" "+node.val);
+             node=node.prev;
+         }
+        System.out.println(" ");
+
+     }
+     
+     public static void insertAtStart(DoubleLinkList node,int insertedValue){
+         
+         while(node.prev!=null){
+             node=node.prev;
+         }
+         
+       DoubleLinkList newNode=new DoubleLinkList(insertedValue);
+       
+       //limk the new Node at first
+       newNode.next=node;
+       node.prev=newNode;
+
+     }
+     
+     public static void insertAtEnd(DoubleLinkList node,int insertedValue){
+         
+         while(node.next!=null){
+             node=node.next;
+         }
+         
+       DoubleLinkList newNode=new DoubleLinkList(insertedValue);
+       
+       //link the new Node at first
+       node.next=newNode;
+       newNode.prev=node;
+
+
      }
      
      public static void main(String []args){
@@ -65,43 +104,29 @@ public class DoubleLinkList{
         l3.prev=l2;
         
         //traverse with start node
+        System.out.println("============="+"new line"+"============");
         traverseNext(l1);
         
         //traverse with end node
+        System.out.println("============="+"new line"+"============");
         traversePrev(l3);
         
+        System.out.println("============="+"new line"+"============");
+        traverseFromStart(l2);
         
-     }
-} l){
-         DoubleLinkList temp=l;
-         
-         while(temp!=null){
-             System.out.println(" "+temp.val);
-             temp=temp.prev;
-         }
-         
-     }
-     
-     public static void main(String []args){
-        System.out.println("Hello World");
-        DoubleLinkList l1=new DoubleLinkList(4);
-        DoubleLinkList l2=new DoubleLinkList(8);
-        DoubleLinkList l3=new DoubleLinkList(15);
+        System.out.println("============="+"new line"+"============");
+        traverseFromEnd(l2);
         
-        //link l1 to l2
-        l1.next=l2;
-        l2.prev=l1;
-        
-        //link l2 to l3
-        l2.next=l3;
-        l3.prev=l2;
-        
+        insertAtStart(l2,2);
+         //traverse with start node
+        System.out.println("============="+"new line"+"============");
+       traverseFromStart(l2);
+       
+       
+       insertAtEnd(l2,50);
         //traverse with start node
-        traverseNext(l1);
-        
-        //traverse with end node
-        traversePrev(l3);
-        
+        System.out.println("============="+"new line"+"============");
+       traverseFromStart(l2);
         
      }
 }
